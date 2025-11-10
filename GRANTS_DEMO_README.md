@@ -10,6 +10,7 @@ Systemet:
 3. ✅ Bygger ett sökindex med FAISS för snabb semantisk sökning
 4. ✅ Låter användare söka med naturliga språkfrågor
 5. ✅ Returnerar de mest relevanta bidragen baserat på BETYDELSE, inte bara nyckelord
+6. ✅ **NYTT:** Valfri OpenAI GPT-integration för intelligent konversation och rekommendationer
 
 ## 🚀 Kom igång
 
@@ -40,24 +41,38 @@ Detta:
 
 ### Steg 3: Kör demon
 
+**Välj mellan TRE demo-lägen:**
+
+#### Alternativ A: Snabb demo (rekommenderat först)
+```bash
+python demo_quick.py
+```
+- Visar 4 förberedda scenarion direkt
+- Ingen interaktion behövs
+- Perfekt för presentationer
+- ~2 minuter
+
+#### Alternativ B: Interaktiv sökning
 ```bash
 python demo_grants.py
 ```
-
-**Välj mellan två lägen:**
-
-**1. Demo-läge (rekommenderat för första körningen)**
-- Kör förberedda scenarion
-- Visar hur systemet fungerar i praktiken
-- Perfekt för att visa för kollegor/kunder
-
-**2. Interaktivt läge**
+- Direkt FAISS-sökning
 - Skriv egna frågor
-- Testa systemet själv
-- Exempel på frågor:
+- Snabb respons (<100ms)
+- Exempel:
   - "funding for education programs helping disadvantaged youth"
   - "environmental protection climate change sustainability"
   - "community health wellness programs"
+
+#### Alternativ C: GPT-assistent (NYTT!)
+```bash
+python demo_openai.py
+```
+- Intelligent konversationsassistent
+- Förstår kontext och ställer följdfrågor
+- Ger personliga rekommendationer
+- Kräver OpenAI API-nyckel
+- Se [OPENAI_INTEGRATION.md](OPENAI_INTEGRATION.md) för setup
 
 ## 📊 Exempel på resultat
 
@@ -154,12 +169,19 @@ model_name = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
 ## 🔧 Teknisk stack
 
+**Grundsystem (alltid):**
 - **Python 3.8+**
 - **Requests** - API-anrop
-- **Transformers** - AI-modeller från Hugging Face
+- **Transformers** - AI-modeller från Hugging Face (sentence-transformers)
 - **PyTorch** - Maskininlärningsramverk
 - **FAISS** - Snabb vektorsökning (Facebook AI)
 - **NumPy** - Numeriska beräkningar
+
+**Valfritt tillägg:**
+- **OpenAI GPT** - Intelligent konversationsassistent (kräver API-nyckel)
+  - Används endast i `demo_openai.py`
+  - Kostnad: ~$18/år för 1000 sökningar/månad
+  - Se [OPENAI_INTEGRATION.md](OPENAI_INTEGRATION.md) för detaljer
 
 ## 📈 Prestanda
 
@@ -183,10 +205,12 @@ model_name = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
    - Favoriter och sparade sökningar
    - E-postaviseringar för nya bidrag
 
-4. **LLM-integration (ChatGPT/Claude)**
-   - Konversationsgränssnitt
-   - Ställ följdfrågor
-   - Få rekommendationer
+4. **LLM-integration** ✅ **IMPLEMENTERAT!**
+   - ✅ OpenAI GPT-assistent finns i `demo_openai.py`
+   - ✅ Konversationsgränssnitt
+   - ✅ Följdfrågor och kontextförståelse
+   - ✅ Personliga rekommendationer
+   - Nästa: Integrera i webbgränssnitt
 
 ## 🐛 Felsökning
 

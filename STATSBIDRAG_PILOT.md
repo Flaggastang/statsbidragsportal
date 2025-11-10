@@ -126,6 +126,13 @@ python demo_grants.py
 ```
 Välj läge 2 och skriv egna frågor.
 
+**Alternativ C: GPT-assistent (NYTT!)**
+```bash
+python demo_openai.py
+```
+Intelligent konversation med OpenAI GPT. Kräver API-nyckel.
+Se [OPENAI_SNABBSTART.md](OPENAI_SNABBSTART.md) för setup.
+
 **Alternativ C: Direkt sökning**
 ```bash
 python -c "from scripts.query_grants import query_grants, display_results; results = query_grants('innovation funding'); display_results('innovation funding', results)"
@@ -388,6 +395,7 @@ CREATE INDEX idx_statsbidrag_deadline ON statsbidrag (sista_ansokningsdag);
 2. **Lägg till filter** - Låt användare filtrera på belopp, deadline, målgrupp
 3. **Caching** - Cacha vanliga sökningar för snabbare respons
 4. **Feedback-loop** - Låt användare markera bra/dåliga resultat för förbättring
+5. **GPT-integration** ✅ IMPLEMENTERAT! - Använd `demo_openai.py` för intelligent konversation
 
 ---
 
@@ -398,6 +406,8 @@ CREATE INDEX idx_statsbidrag_deadline ON statsbidrag (sista_ansokningsdag);
 - **Pilot README:** `GRANTS_DEMO_README.md` - Detaljerad teknisk dokumentation
 - **Snabbstart:** `SNABBSTART.md` - Kom igång på 3 minuter
 - **Denna fil:** `STATSBIDRAG_PILOT.md` - Översikt och jämförelse
+- **OpenAI Integration:** `OPENAI_INTEGRATION.md` - GPT-funktionalitet (NYTT)
+- **OpenAI Snabbstart:** `OPENAI_SNABBSTART.md` - Kom igång med GPT (NYTT)
 
 ### Kodstruktur
 
@@ -430,6 +440,7 @@ Detta är en pilot/proof-of-concept. Förslag och förbättringar välkomnas!
 
 ### Möjliga förbättringar
 
+- [x] ✅ **GPT-konversationsassistent** (IMPLEMENTERAT!)
 - [ ] Webbgränssnitt (React/Vue)
 - [ ] REST API (FastAPI)
 - [ ] Filtrering och sortering
