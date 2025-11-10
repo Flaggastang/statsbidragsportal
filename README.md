@@ -1,4 +1,4 @@
-# 🎯 Statsbidragsportal - AI-sökning (Pilot)
+# Statsbidragsportal - AI-sökning (Pilot)
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
@@ -7,7 +7,7 @@
 
 ---
 
-## 🚀 Snabbstart
+## Snabbstart
 
 ```bash
 # 1. Installera beroenden
@@ -16,15 +16,23 @@ pip install -r requirements.txt
 # 2. Indexera bidrag (tar 2-3 minuter)
 python scripts/fetch_and_index_grants.py
 
-# 3. Kör demon!
+# 3. Välj demo-läge:
+
+# Alternativ A: Snabb demo (rekommenderat för första gången)
 python demo_quick.py
+
+# Alternativ B: Interaktiv sökning
+python demo_grants.py
+
+# Alternativ C: Med GPT-assistent (kräver OpenAI API-nyckel)
+python demo_openai.py
 ```
 
-**Det var det!** Nu kan du se hur AI-sökning fungerar. ✨
+**Det var det!** Nu kan du se hur AI-sökning fungerar.
 
 ---
 
-## 💡 Vad är detta?
+## Vad är detta?
 
 Detta är en **fungerande prototyp** som demonstrerar tekniken bakom en intelligent statsbidragssökning. 
 
@@ -43,7 +51,7 @@ Resultat: Hittar bidrag om integration, språkträning,
          arbetsmarknad, etablering - även utan exakta ord!
 ```
 
-### 🎬 Live demo
+### Live demo
 
 ```bash
 python demo_quick.py
@@ -59,47 +67,48 @@ python demo_quick.py
 
 ---
 
-## 📊 Pilot vs. Produktionssystem
+## Pilot vs. Produktionssystem
 
-| Funktion | 🧪 Denna Pilot | 🎯 Produktionsmål |
+| Funktion | Denna Pilot | Produktionsmål |
 |----------|----------------|-------------------|
 | Datakälla | Grants.gov (USA) | Svenska statsbidrag |
 | Antal bidrag | ~130 | ~160 |
-| Sökning | ✅ AI semantisk | ✅ AI semantisk |
-| Språk | Svenska/Engelska | ✅ Svenska |
-| Gränssnitt | Kommandorad | → Webbapp |
-| Status | **✅ KLART** | 2-4 veckor |
+| Sökning | AI semantisk | AI semantisk |
+| Språk | Svenska/Engelska | Svenska |
+| Gränssnitt | Kommandorad | Webbapp |
+| Status | **KLART** | 2-4 veckor |
 
 ---
 
-## 🎯 För vem är detta?
+## För vem är detta?
 
 ### Kommuner som vill:
-- 💰 Hitta rätt statsbidrag snabbare
-- 🤖 Använda naturligt språk istället för nyckelord
-- ⚡ Få svar på sekunder, inte timmar
+- Hitta rätt statsbidrag snabbare
+- Använda naturligt språk istället för nyckelord
+- Få svar på sekunder, inte timmar
 
 ### Utvecklare som vill:
-- 🔍 Se hur semantisk sökning fungerar i praktiken
-- 🧠 Förstå AI-driven matchning
-- 🚀 Bygga liknande system
+- Se hur semantisk sökning fungerar i praktiken
+- Förstå AI-driven matchning
+- Bygga liknande system
 
 ### Beslutsfattare som vill:
-- 📈 Se en fungerande proof-of-concept
-- 💡 Förstå tekniska möjligheter
-- ✅ Bedöma genomförbarhet
+- Se en fungerande proof-of-concept
+- Förstå tekniska möjligheter
+- Bedöma genomförbarhet
 
 ---
 
-## 📚 Dokumentation
+## Dokumentation
 
 - **[STATSBIDRAG_PILOT.md](STATSBIDRAG_PILOT.md)** - Komplett översikt och jämförelse
 - **[GRANTS_DEMO_README.md](GRANTS_DEMO_README.md)** - Teknisk dokumentation
 - **[SNABBSTART.md](SNABBSTART.md)** - Kom igång på 3 minuter
+- **[OPENAI_INTEGRATION.md](OPENAI_INTEGRATION.md)** - GPT-integration (NYTT)
 
 ---
 
-## 🏗️ Hur det fungerar (förenklat)
+## Hur det fungerar (förenklat)
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -119,10 +128,11 @@ python demo_quick.py
 - **Sentence Transformers** - AI för textförståelse
 - **FAISS** - Snabb vektorsökning (Facebook AI)
 - **Grants.gov API** - Datakälla (kan bytas ut)
+- **OpenAI GPT (valfritt)** - Intelligent konversationsassistent (NYTT)
 
 ---
 
-## 🔧 Anpassa för svenska statsbidrag
+## Anpassa för svenska statsbidrag
 
 Se detaljerad guide i [STATSBIDRAG_PILOT.md](STATSBIDRAG_PILOT.md#-anpassa-för-svenska-statsbidrag)
 
@@ -132,19 +142,19 @@ Se detaljerad guide i [STATSBIDRAG_PILOT.md](STATSBIDRAG_PILOT.md#-anpassa-för-
 2. Ändra en funktion i `scripts/fetch_and_index_grants.py`
 3. Byt till flerspråkig AI-modell
 4. Kör indexering
-5. **Klart!** ✨
+5. **Klart!**
 
 ---
 
-## 🎓 Vad vi har lärt oss
+## Vad vi har lärt oss
 
-### ✅ Fungerar bra:
+### Fungerar bra:
 - AI förstår svenska frågor (även med engelsktränad modell!)
 - Semantisk matchning ger bättre resultat än nyckelord
 - Snabbt och skalbart (klarar tusentals bidrag)
 - Enkelt att implementera
 
-### 💡 Rekommendationer för produktion:
+### Rekommendationer för produktion:
 - Använd flerspråkig modell för bättre svenskstöd
 - Lägg till webbgränssnitt (React/Vue)
 - Implementera filter (belopp, deadline, målgrupp)
@@ -152,7 +162,7 @@ Se detaljerad guide i [STATSBIDRAG_PILOT.md](STATSBIDRAG_PILOT.md#-anpassa-för-
 
 ---
 
-## 📊 Prestanda
+## Prestanda
 
 | Mått | Värde |
 |------|-------|
@@ -164,11 +174,12 @@ Se detaljerad guide i [STATSBIDRAG_PILOT.md](STATSBIDRAG_PILOT.md#-anpassa-för-
 
 ---
 
-## 🤝 Bidra
+## Bidra
 
 Detta är en proof-of-concept. Förslag och förbättringar välkomnas!
 
 **Möjliga förbättringar:**
+- [x] GPT-konversationsassistent (KLART!)
 - [ ] Webbgränssnitt
 - [ ] REST API
 - [ ] Filtrering och sortering
@@ -178,20 +189,20 @@ Detta är en proof-of-concept. Förslag och förbättringar välkomnas!
 
 ---
 
-## 📞 Support
+## Support
 
 **Problem?** Öppna ett [issue](https://github.com/Flaggastang/statsbidragsportal/issues)  
 **Frågor?** Se [STATSBIDRAG_PILOT.md](STATSBIDRAG_PILOT.md)
 
 ---
 
-## 📄 Licens
+## Licens
 
 MIT License - se [LICENSE](LICENSE) för detaljer
 
 ---
 
-## 🌟 Tack till
+## Tack till
 
 - [Sentence Transformers](https://www.sbert.net/) - AI-modeller
 - [FAISS](https://github.com/facebookresearch/faiss) - Vektorsökning
@@ -200,5 +211,5 @@ MIT License - se [LICENSE](LICENSE) för detaljer
 ---
 
 **Skapad:** November 2024  
-**Status:** ✅ Fungerande proof-of-concept  
+**Status:** Fungerande proof-of-concept  
 **Nästa steg:** Anpassa för svenska statsbidrag → Bygg webbgränssnitt → Lansera!
