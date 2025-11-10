@@ -1,0 +1,79 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# AI Models och Cache
+.cache/
+*.pt
+*.pth
+models/
+
+# FAISS Index och Data (kommer skapas lokalt)
+*.faiss
+data/grants_index.faiss
+data/grants_data.json
+data/grants_metadata.txt
+data/kpi_index.faiss
+data/kpi_ids.txt
+
+# Loggar
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Excel
+*.xlsx
+
+# PDF (stora filer)
+artiklar/*.pdf
+
+# Gamla projekt-filer (inte relaterade till statsbidrag)
+main.py
+kpi_ids.txt
+kpi_index.faiss
+artiklar_metadata.json
+nationalekonomi_articles.json
+statsvetenskaplig_tidskrift_articles.json
+quality_report_*.json
+json_analysis_*.log
+*_scraping.log
+*_extraction.log
+*_enrichment.log
+*_matching.log
+*_analysis.log
+analysis_results.xlsx
+artiklar/
+
