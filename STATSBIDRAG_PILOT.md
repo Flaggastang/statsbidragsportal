@@ -11,22 +11,6 @@ En fungerande prototyp av ett intelligent söksystem där kommuner kan:
 - ✅ Få relevanta bidrag baserat på **betydelse**, inte bara nyckelord
 - ✅ Snabbt hitta rätt bidrag bland hundratals alternativ
 
-### 🆚 Jämförelse: Pilot vs. Statsbidragstjänst
-
-| Aspekt | 🧪 Denna Pilot | 🎯 Statsbidragstjänst (Målbild) |
-|--------|---------------|----------------------------------|
-| **Datakälla** | Grants.gov API (USA) - 130 bidrag | Svenska statsbidrag - ~160 bidrag |
-| **Språk** | Engelska bidrag, svenska/engelska sökning | Svenska bidrag och sökning |
-| **Teknologi** | ✅ AI semantisk sökning (FAISS + transformers) | ✅ Samma teknologi |
-| **Sökmetod** | ✅ Naturligt språk, förstår betydelse | ✅ Samma |
-| **Gränssnitt** | Kommandorad (CLI) | Webbgränssnitt + API |
-| **Datafält** | Titel, beskrivning, myndighet, deadline, länk | + Belopp, målgrupp, kontaktperson, alla 10 fält |
-| **Användare** | Demo/test | Kommuner i produktion |
-| **Uppdatering** | Manuell (kör script) | Automatisk (cron/scheduled) |
-| **Tid att bygga** | ✅ **2-3 timmar** (KLART!) | 2-4 veckor för full tjänst |
-
----
-
 ## 🏗️ Arkitektur
 
 ### Teknisk Stack
@@ -126,7 +110,7 @@ python demo_grants.py
 ```
 Välj läge 2 och skriv egna frågor.
 
-**Alternativ C: GPT-assistent (NYTT!)**
+**Alternativ C: GPT-assistent**
 ```bash
 python demo_openai.py
 ```
@@ -381,7 +365,6 @@ CREATE INDEX idx_statsbidrag_deadline ON statsbidrag (sista_ansokningsdag);
 1. **Snabb utveckling** - Från noll till fungerande demo på några timmar
 2. **Robust API** - Grants.gov API fungerade stabilt
 3. **Bra prestanda** - Även med grundmodellen
-4. **Språkflexibilitet** - Fungerar oväntat bra med svenska frågor
 
 ### ⚠️ Utmaningar
 
@@ -452,22 +435,7 @@ Detta är en pilot/proof-of-concept. Förslag och förbättringar välkomnas!
 - [ ] A/B-testning av olika modeller
 - [ ] Feedback-system
 
----
 
-## 📞 Kontakt
-
-För frågor om piloten eller implementering av statsbidragstjänsten, kontakta projektansvarig.
-
----
-
-## 📄 Licens
-
-[Lägg till licens här]
-
----
-
-**Skapad:** 2024-11-10  
-**Senast uppdaterad:** 2024-11-10  
 **Version:** 1.0 (Pilot)  
 **Status:** ✅ Fungerande proof-of-concept
 
