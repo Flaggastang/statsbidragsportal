@@ -1,8 +1,8 @@
-# 🎯 Grants.gov Demo - Intelligent Bidragssökning
+# Grants.gov Demo - Intelligent Bidragssökning
 
 Detta är en demo som visar hur AI-driven semantisk sökning kan användas för att hjälpa kommuner hitta relevanta statsbidrag.
 
-## 📋 Vad gör demon?
+## Vad gör demon?
 
 Systemet:
 1. ✅ Hämtar aktuella bidrag från Grants.gov API (USA:s federala bidragsdatabas)
@@ -10,9 +10,9 @@ Systemet:
 3. ✅ Bygger ett sökindex med FAISS för snabb semantisk sökning
 4. ✅ Låter användare söka med naturliga språkfrågor
 5. ✅ Returnerar de mest relevanta bidragen baserat på BETYDELSE, inte bara nyckelord
-6. ✅ **NYTT:** Valfri OpenAI GPT-integration för intelligent konversation och rekommendationer
+6. ✅ OpenAI GPT-integration för intelligent konversation och rekommendationer
 
-## 🚀 Kom igång
+## Kom igång
 
 ### Steg 1: Installera beroenden
 
@@ -74,22 +74,22 @@ python demo_openai.py
 - Kräver OpenAI API-nyckel
 - Se [OPENAI_INTEGRATION.md](OPENAI_INTEGRATION.md) för setup
 
-## 📊 Exempel på resultat
+## Exempel på resultat
 
 **Fråga:** *"funding for education programs helping disadvantaged youth"*
 
 **Resultat:**
 ```
 #1. Education Grants for At-Risk Youth
-📋 ID: ED-GRANTS-2024-001
-🏛️ Myndighet: Department of Education
-💰 Belopp: $50,000 - $500,000
-📅 Deadline: 2025-03-15
-🏷️ Kategori: Education
-🔗 Länk: [URL]
+ID: ED-GRANTS-2024-001
+Myndighet: Department of Education
+Belopp: $50,000 - $500,000
+Deadline: 2025-03-15
+Kategori: Education
+Länk: [URL]
 ```
 
-## 🎨 Hur anpassar jag detta för svenska statsbidrag?
+## Hur anpassar jag detta för svenska statsbidrag?
 
 ### A. Med API/Databas
 
@@ -154,7 +154,7 @@ def fetch_grants_data():
     return grants
 ```
 
-## 🌐 Svensk språkstöd
+## Svensk språkstöd
 
 För BÄSTA resultat på svenska, byt AI-modell:
 
@@ -167,7 +167,7 @@ model_name = "sentence-transformers/all-MiniLM-L6-v2"
 model_name = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 ```
 
-## 🔧 Teknisk stack
+## Teknisk stack
 
 **Grundsystem (alltid):**
 - **Python 3.8+**
@@ -176,12 +176,7 @@ model_name = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 - **PyTorch** - Maskininlärningsramverk
 - **FAISS** - Snabb vektorsökning (Facebook AI)
 - **NumPy** - Numeriska beräkningar
-
-**Valfritt tillägg:**
-- **OpenAI GPT** - Intelligent konversationsassistent (kräver API-nyckel)
-  - Används endast i `demo_openai.py`
-  - Kostnad: ~$18/år för 1000 sökningar/månad
-  - Se [OPENAI_INTEGRATION.md](OPENAI_INTEGRATION.md) för detaljer
+- **OpenAI GPT** eller liknande - Konversationsassistent (kräver API-nyckel)
 
 ## 📈 Prestanda
 
@@ -189,7 +184,7 @@ model_name = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 - **Sökning:** <100ms per fråga
 - **Skalbarhet:** Klarar tusentals bidrag utan problem
 
-## 🎯 Nästa steg för produktionssystem
+## Nästa steg för produktionssystem
 
 1. **Webbgränssnitt**
    - React/Vue frontend
@@ -212,7 +207,7 @@ model_name = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
    - ✅ Personliga rekommendationer
    - Nästa: Integrera i webbgränssnitt
 
-## 🐛 Felsökning
+## Felsökning
 
 **Problem:** "Kunde inte ladda FAISS-index"
 - **Lösning:** Kör `python scripts/fetch_and_index_grants.py` först
@@ -222,19 +217,6 @@ model_name = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
 **Problem:** "ModuleNotFoundError"
 - **Lösning:** Kör `pip install -r requirements.txt`
-
-## 💡 Frågor?
-
-Detta är en proof-of-concept som visar hur AI-driven sökning fungerar.
-Samma koncept kan appliceras på:
-- ✅ Svenska statsbidrag
-- ✅ Lagtexter och förordningar
-- ✅ Policydokument
-- ✅ Forskningsartiklar
-- ✅ Jobbannoner
-- ✅ Och mycket mer!
-
----
 
 **Skapad:** 2024-11-10
 **Baserad på:** Kolada KPI-matcher projektet
