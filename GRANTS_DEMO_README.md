@@ -1,4 +1,4 @@
-# Grants.gov Demo - Intelligent Bidragssökning
+# Grants.gov Demo - Intelligent bidragssökning
 
 Detta är en demo som visar hur AI-driven semantisk sökning kan användas för att hjälpa kommuner hitta relevanta statsbidrag.
 
